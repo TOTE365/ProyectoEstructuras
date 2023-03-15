@@ -75,6 +75,7 @@ struct instrumentos{
 };
 
 struct eventos{
+    //lista simple
     string nombre;
     string lugar;
     string hora;
@@ -93,11 +94,13 @@ struct eventos{
 };
 
 struct historiaEventos{
+    //lista doble y circular
     eventos * evento;
     int calificacion;
     grupoMusical * grupo;
 
     historiaEventos*sig;
+    historiaEventos*ant;
 
     historiaEventos(eventos * e , int c, grupoMusical*g){
         evento = e;
@@ -106,6 +109,8 @@ struct historiaEventos{
     }
 
 };
+
+
 
 int main()
 {
